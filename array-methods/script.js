@@ -1,11 +1,10 @@
+// if you eant to check if the array method mutates the original
+// https://doesitmutate.xyz/
 // map - it changes every element of an array
 
 const numbers = [1, 2, 3, 4, 5];
 
 // -> [2, 4, 6, 8, 10]
-
-
-
 
 // function myOwnMap(arr, callback) {
 //     const result = [];
@@ -31,9 +30,8 @@ const doubled = numbers.map(function (number) {
     return number * 2
 });
 
-// console.log(doubled)
-// console.log(numbers)
-
+console.log(doubled)
+console.log(numbers)
 // create an array of strings
 // using map add an exclamation mark at the end of every string
 
@@ -295,3 +293,82 @@ function getTitlesOfPlacesAbove300(places) {
 }
 const result = getTitlesOfPlacesAbove300(places);
 console.log(result);
+
+console.clear();
+
+// reverse() - reverses an array
+const nums4 = [1, 2, 3, 4, 5];
+nums4.reverse();
+console.log(nums4)
+
+const str = 'hello world';
+// change a string to an array - split()
+const arr = str.split('');
+arr.reverse();
+// change an array to a string
+const reversedString = arr.join('');
+
+const inOneLine = str.split('').reverse().join('');
+console.log(inOneLine);
+
+const name = 'alice';
+// change name to this: 'a*l*i*c*e'
+const nameChanged = name.split('').join('*');
+console.log(nameChanged);
+
+// const str = 'hello world';
+// how many times does a certain character appear in a string
+const string = 'helolo worold';
+const occurences = string.split('w').length - 1;
+console.log(occurences);
+
+console.clear();
+
+// sort - sort an array 
+
+const nums5 = [2, 55, 32, 12, 4];
+
+// this sorts by the encoded characters -> not correct  
+// const wronglySorted = nums5.sort();
+// console.log(wronglySorted);
+
+// this to make a copy to not mutate the original
+// for an array like this (only containing numbers) nums5.slice()
+// would be enough
+const copy = JSON.parse(JSON.stringify(nums5));
+const sorted = copy.sort(function (a, b) {
+    // if (a < b) {
+    //     return - 1
+    // }
+    // if (b < a) {
+    //     return 1
+    // }
+    return a - b
+})
+console.log(sorted);
+
+console.log('nums 5: ', nums5)
+
+const reviews = [
+    {
+        name: 'foo',
+        rate: 9
+    },
+    {
+        name: 'bar',
+        rate: 3
+    },
+    {
+        name: 'baz',
+        rate: 5
+    }
+]
+// sort the reviews ascending by it's rate
+const sortedReviews = reviews.sort(function (a, b) {
+    // ascending
+    return a.rate - b.rate
+    // descending
+    // return b.rate - a.rate
+})
+
+console.log(sortedReviews)
