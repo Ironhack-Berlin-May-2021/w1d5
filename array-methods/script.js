@@ -2,6 +2,8 @@
 // https://doesitmutate.xyz/
 // map - it changes every element of an array
 
+// link to the data structures used in the exercices https://pastebin.com/fz5ErEpL
+
 const numbers = [1, 2, 3, 4, 5];
 
 // -> [2, 4, 6, 8, 10]
